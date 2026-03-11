@@ -1,5 +1,5 @@
-// API URL - update this after deploying to Render
-const API_URL = 'http://localhost:8000';
+// API URL - Render production
+const API_URL = 'https://prompt-gem-library-api.onrender.com';
 
 // DOM Elements
 const searchForm = document.getElementById('search-form');
