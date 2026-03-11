@@ -52,6 +52,13 @@ async def root():
     }
 
 
+@app.get("/health")
+async def health_check():
+    """Health check endpoint for Uptime Robot. Queries database to keep connection warm."""
+    item_count = get_item_count()
+    return {"status": "ok", "item_count": item_count}
+
+
 @app.post("/items/gem", response_model=ItemResponse)
 async def add_gem(gem: GemCreate):
     """Add a Gemini Gem link with URL, title, and description."""
